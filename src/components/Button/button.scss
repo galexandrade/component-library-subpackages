@@ -1,0 +1,19 @@
+.button {
+    border-radius: 4px;
+    background: #f3f3f3;
+    border-color: #d5d5d5;
+    color: #464646;
+    border-width: 1px;
+    padding: 8px 12px;
+    border-style: solid;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    gap: 8px;
+
+    &:hover {
+        background: #d5d5d5;
+        border-color: #949494;
+        color: #323232;
+    }
+}
