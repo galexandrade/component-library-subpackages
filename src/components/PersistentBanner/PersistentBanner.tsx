@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconInfoCircle } from '../../icons';
+import { IconInfoCircle } from 'icons';
 import styles from './persistent-banner.scss';
 
 type Props = {

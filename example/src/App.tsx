@@ -1,10 +1,7 @@
 import './App.css';
 import 'component-library-subpackages/dist/index.css';
-import {
-    Button,
-    IconPencil,
-    PersistentBanner
-} from 'component-library-subpackages';
+import { Button, PersistentBanner } from 'component-library-subpackages';
+import { IconPencil } from 'component-library-subpackages/icons';
 
 function App() {
     return (

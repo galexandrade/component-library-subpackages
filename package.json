@@ -4,6 +4,7 @@
     "description": "Learning how to export sub packages in a component library",
     "author": "7shifts",
     "license": "MIT",
+    "private": true,
     "main": "dist/index.js",
     "module": "dist/index.modern.js",
     "source": "src/index.ts",
@@ -11,10 +12,19 @@
         "node": ">=10"
     },
     "scripts": {
-        "build": "microbundle-crl --format modern,cjs",
+        "build": "yarn run build:icons && yarn run build:core",
+        "build:core": "microbundle-crl --format modern,cjs",
+        "build:icons": "cd icons && microbundle-crl --tsconfig icons/tsconfig.json --format modern,cjs",
         "prebuild:check": "yarn build",
         "build:check": "source-map-explorer dist/index.js dist/index.js.map",
+        "build:icons:check": "source-map-explorer icons/dist/index.js icons/dist/index.js.map",
         "watch": "microbundle-crl --watch --format modern,cjs"
+    },
+    "workspaces": [
+        "icons"
+    ],
+    "dependencies": {
+        "icons": "*"
     },
     "peerDependencies": {
         "react": ">16.0.0",
@@ -39,6 +49,7 @@
         "typescript": "^3.7.5"
     },
     "files": [
-        "dist"
+        "dist",
+        "icons"
     ]
 }
